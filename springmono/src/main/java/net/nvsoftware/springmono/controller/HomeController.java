@@ -29,4 +29,15 @@ public class HomeController {
         user.setEmail("sfnlsklfd");
         return user;
     }
+
+    @GetMapping("/userparams")
+    public User userByRequestParams(@RequestParam String id,
+                                    @RequestParam("userparams") String name,
+                                    @RequestParam(required = false, defaultValue = "suifdu")String email) {
+        User user = new User();
+        user.setId(id);
+        user.setName(name);
+        user.setEmail(email);
+        return user;
+    }
 }
