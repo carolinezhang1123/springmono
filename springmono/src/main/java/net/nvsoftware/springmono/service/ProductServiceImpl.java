@@ -17,7 +17,7 @@ public class ProductServiceImpl implements ProductService {
             product.setProductId(UUID.randomUUID().toString());
         }
         productList.add(product);
-        return null;
+        return product;
     }
 
     @Override

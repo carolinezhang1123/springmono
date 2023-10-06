@@ -13,4 +13,11 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
         ErrorMsg errorMsg = new ErrorMsg(HttpStatus.NOT_FOUND, e.getMessage());
         return errorMsg;
     }
+    @ExceptionHandler(Exception.class)
+    @ResponseBody
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorMsg productNotFoundHandler(Exception e) {
+        ErrorMsg errorMsg = new ErrorMsg(HttpStatus.NOT_FOUND, e.getMessage());
+        return errorMsg;
+    }
 }

@@ -3,6 +3,7 @@ package net.nvsoftware.springmono.controller;
 import net.nvsoftware.springmono.model.Product;
 import net.nvsoftware.springmono.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,11 +12,13 @@ import java.util.List;
 @RequestMapping("/product")
 public class ProductController {
 
+   // @Qualifier("productServiceImpl")
     @Autowired
     private ProductService productService;
-    @PostMapping("/save")
+    @PostMapping("")
     public Product save(@RequestBody Product product) {
         productService.save(product);
+
         return product;
     }
     @GetMapping("")
