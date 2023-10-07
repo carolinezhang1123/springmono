@@ -12,7 +12,7 @@ import java.util.List;
 @RequestMapping("/product")
 public class ProductController {
 
-   // @Qualifier("productServiceImpl")
+    @Qualifier("productServiceImpl")
     @Autowired
     private ProductService productService;
     @PostMapping("")
